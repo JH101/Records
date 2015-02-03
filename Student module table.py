@@ -24,8 +24,16 @@ for record in range(5):
     student.total = (student.module1 + student.module2 + student.module3 + student.module4)
     students.append(student)
 
-print("|Name|Module1|Module2|Module3|Module4|Total|")
+total = 0
+
+for student in students:
+    total = total + student.total
+
+
+mean = total/5
+
+print("|Name|Module1|Module2|Module3|Module4|Total|Mean|")
 for student in students:
     
-    print("|{0}|{2:>4}{3:>4}{4:>4}{5:>4}{6:>4}{7:>4}{8:>4}{9:>4}{10:>3}{11:>3}".format(student.name,"|", student.module1,"|", student.module2,"|", student.module3,"|", student.module4,"|", student.total, "|"))
+    print("|{0}|{2:>4}{3:>4}{4:>4}{5:>4}{6:>4}{7:>4}{8:>4}{9:>4}{10:>3}{11:>3}{12}{13:>2}".format(student.name,"|", student.module1,"|", student.module2,"|", student.module3,"|", student.module4,"|", student.total, "|", student.total - mean, "|"))
     
